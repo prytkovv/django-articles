@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Article detail{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1> {{ article.title }}</h1>
+        <p> {{ article.content }}</p>
+        <p> {{ article.author }}</p>
+        <p> {{ article.created }}</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-success btn-sm" type="submit" value="To favorites">
+        </form>
+    </div>}
+{% endblock %}
